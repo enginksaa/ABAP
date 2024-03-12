@@ -1,2 +1,2 @@
 # ABAP
-My learnin path for ABAP
+ABAP Learning Path
