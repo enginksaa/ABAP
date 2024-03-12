@@ -1,0 +1,84 @@
+*ABAP DATA TYPES
+*TYPE string –  Her programlama dilinde yer alan ve metinsel ifadeleri tanımlamak için kullanılan veri tipidir.
+
+*TYPE c – Char Her programa dilinde yer alan ve karakter bazlı ifadeleri (a,b vb.) tanımlamak için kullanılan veri tipidir. 
+*Ayrıca LENGTH ile bir uzunluk ifadesi belirtilirse belirtilen uzunluk sayısı kadar karakter girebiliriz.
+
+*TYPE i – Integer – Her programlama dilinde yer alan ve sayısal ifadeleri tanımlamak için kullanılan veri tipidir.
+*TYPE p – ABAP dilinde tanımlanması ondalıklı sayıya karşılık gelmektedir.
+*DECIMALS değerini de sonuna eklersek ve bir değer verirsek virgülden sonra kaç basamak kullanacağımız anlamına gelmektedir.
+
+*TYPE n – Bu değişken tipi daha çok telefon numarası, posta kodu , TC kimlik numarası gibi uzunluğu sabit olan verilerin tanımlanması için kullanılır. 
+*Sonunda belirtilen LENGTH ile kaç hane olacağı belirtilir. 
+
+*TYPE d – Bu değişken tipi ABAP programlama dilinde tarihi belirtmek amaçlı kullanılır. 
+
+*TYPE t – Bu değişken tipi ABAP programlama dilinde zamanı belirtmek amaçlı kullanılır. 
+
+DATA : gv_variab1 TYPE i,
+       gv_variab2 TYPE n LENGTH 10, // 10 defines lenght of gv_variab2 variable
+       gv_variab3 TYPE i,
+       gv_variab4 TYPE string.
+        
+       gv_variab1 = 10.
+       gv_variab2 = 20
+
+**Ekrana yazdırma komutu.
+       WRITE gv_variab1.
+**Alt satıra yazdırma '/' ile sağlanır.
+       WRITE /gv_variab2.
+
+**********MATEMATIKSEL ISLEMLER*************
+DATA : gv_result_add TYPE i,
+       gv_result_subs TYPE i,
+       gv_result_multiple TYPE i,
+       gv_result_divide TYPE i,
+       gv_result_mod TYPE i,
+       gv_text TYPE string.
+
+       gv_text = 'Çarpımı = '.
+
+       gv_variab3 = 12
+       gv_variab4 = 20
+        
+**Toplama işlemi
+       gv_result_add = gv_variab1 + gv_variab2.
+       WRITE : gv_result_add.
+**Çıkartma işlemi
+       gv_result_subs = gv_variab1 - gv_variab2.
+       WRITE : gv_result_subs.
+** Çarpma işlemi
+       gv_result_multiple = gv_variab1 * gv_variab2.
+       **Çıktıya metin eklenmesi v1
+       WRITE : gv_text ,
+               gv_result_multiple.
+** Bölme işlemi
+       gv_result_divide = gv_variab3 / gv_variab4.
+      **Çıktıya yazı eklenmesi v2
+       WRITE /'Bölüm = ' gv_result_divide.
+** MOD bulma (Bölümün Kalanını bulma)
+       **Burada 20/12 işleminden kalan 8 'dir
+       gv_result_mod = gv_variab4 % gv_variab3.
+       WRITE gv_result_mod.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
