@@ -1,0 +1,69 @@
+******* IF USE *******
+
+DATA : gv_variab1 TYPE i,
+       gv_variab2 TYPE n LENGTH 10, // 10 defines lenght of gv_variab2 variable
+       gv_variab3 TYPE i,
+       gv_variab4 TYPE string.
+
+IF gv_variab1 > gv_variab2.
+  WRITE : 'Birinci Sayı Büyüktür'.
+ENDIF.
+
+IF gv_variab2 > gv_variab1.
+  WRITE : 'İkinci Sayı Büyüktür'.
+ENDIF
+
+IF gv_variab1 = gv_variab2.
+  WRITE : 'Sayılar eşittir.'.
+ENDIF.
+
+******* ELSEIF USE *******
+
+IF gv_variab1 > gv_variab2.
+  WRITE : 'Birinci sayı büyüktür.'.
+ELSEIF gv_variab2 > gv_variab1.
+  WRITE : 'İkinci sayı büyüktür.'.
+ELSE
+  WRITE : 'Sayılar eşittir'.
+ENDIF.
+
+
+IF gv_variab1 =1. 
+  WRITE 'Değişken değerim 1.'.
+ELSEIF gv_Variab2 = 2.
+  WRITE 'Değişken değerim 2.'.
+ELSEIF gv_Variab3 = 3.
+  WRITE 'Değişken değerim 3.'.
+ELSEIF gv_Variab4 = 4.
+  WRITE 'Değişken değerim 4.'.
+ENDIF.
+
+
+******* CASE USE ******* 
+
+CASE gv_variab1
+  WHEN 1.
+    WRITE : 'Değişken değerim 1.'.
+  WHEN 2.
+    WRITE : 'Değişken değerim 2.'.
+  WHEN 3.
+    WRITE : 'Değişken değerim 3.'.
+  WHEN 4.
+    WRITE : 'Değişken değerim 4.'.
+ENDCASE.
+
+
+******* DO USE *******
+
+DO 10 TIMES.
+  gv_variab4 = gv_variab4 + 1.
+  WRITE /gv_variab4,'DO Döngüsü öğreniyoruz'.
+ENDDO.
+
+
+******* WHILE USE *******
+
+WHILE gv_variab3 < 100.
+  gv_variab3 = gv_variab3 + 1.
+  WRITE /gv_variab3,'WHILE Döngüsü öğreniyoruz'.
+ENDWHILE
