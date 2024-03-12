@@ -5,3 +5,6 @@
 **Odd number  : 3 
 
 
+DATA : gv_odd_number  TYPE i,
+       gv_even_number TYPE i.
+
