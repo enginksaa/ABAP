@@ -1,0 +1,41 @@
+*Ekranda sayısal tipinde üç parametre olsun.
+*Parametreler;
+*Birinci Sayı
+*ikinci Sayı
+*üçüncü Sayı
+*üç parametreyi de girip çalıştırdığımda, hangi girdiğim sayı diğer iki sayının arasındaysa bunu
+*Ekranda mesaj alarak belirten progam yazın,
+*Örnek-1:
+*Birindi Sayı 45
+*ikinci Sayı 6
+*Üçüncü Sayı 75
+*Ekranda yazdıracağı,
+*Birinci sayı diğer iki sayının ortasındadır.
+*Örnek-2:
+*Birindi Sayı 80
+*ikinci Sayı 14
+*Üçüncü Sayı 65
+**Ekranda yazdıracağı,
+*üçüncü sayı diğer iki sayının ortasındadır.
+
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
+  PARAMETERS : p_num1 TYPE i,
+               p_num2 TYPE i,
+               p_num3 TYPE i,
+SELECTION-SCREEN END OF BLOCK b11.
+
+    IF p_num1 IS INITIAL 
+       AND p_num2 IS INITIAL
+       AND p_num3 IS INITIAL.
+    WRITE : /'LÜTFEN SAYI GİRİNİZ'.
+    ENDIF.
+
+    IF  (p_num2 < p_num1 AND p_num1 < p_num3) OR (p_num2 > p_num1 AND p_num1 > p_num3).
+        WRITE : ' Birinci sayı diğer iki sayının arasındadır.'.
+    ELSEIF (p_num1 < p_num2 AND p_num2 < p_num3) OR (p_num1 > p_num2 AND p_num2 > p_num3).
+        WRITE : ' İkinci sayı diğer iki sayının arasındadır.'.
+    ELSEIF (p_num1 < p_num3 AND p_num3 < p_num2) OR (p_num1 > p_num3 AND p_num3 > p_num2 ).
+        WRITE : ' Üçüncü sayı diğer iki sayının arasındadır.'.
+    ENDIF.
