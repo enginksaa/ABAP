@@ -1,0 +1,17 @@
+**Outputu 100 e kadar 
+**2'e Tam bölünenler 2,4,6,8...
+**3'e Tam bölünenler 3,6,9,12,...
+**5'e Tam bölünenler 5,10,15,20,.. çıktı olacak şekillde bir program yazınız.
+
+
+DATA gv_number TYPE i.
+
+WHILE gv_number < 100.
+      gv_number = gv_number + 1.
+  IF gv_number MOD 2 = 0.
+     WRITE : /' 2'e Tam bölünenler ', gv_number.
+  ELSEIF gv_number MOD 3 = 0.
+     WRITE : /' 3'e Tam bölünenler ', gv_number.
+  ELSEIF gv_number MOD 5 = 0.
+     WRITE : /' 5'e Tam bölünenler ', gv_number.
+  ENDIF.
