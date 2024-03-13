@@ -1,0 +1,44 @@
+*Ekranda sayısal bir parametre olsun.
+*Parametre de girdiğim sayıya göre uyan koşulu ekrana yazacak uygulama yazın
+*Koşullar;
+*Û ile 25 arasında mı
+*25 ile 50 arasında mı
+*50 ile 75 arasında mı
+*75 ile 100 arasında mı
+*100 den büyük mü
+*Örnek-1;
+*Girdiğim sayı 15 ise
+*Ekranda;
+*Girilen sayı 15
+*0 ile 25 arasındadır!
+*Örnek-2;
+*Girdiğim sayı 45 ise
+*Ekranda;
+*Girilen sayı 45
+*25 ile 50 arasındadır!
+*Ornek-3;
+*Girdiğim sayı 105 ise
+*Ekranda;
+*Girilen sayı 105
+*100 den büyüktür!
+
+
+
+
+ SELECTION SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
+
+  PARAMETERS : p_num1 TYPE i.
+
+SELECT SCREEN END OF BLOCK b11.
+
+  IF 0 <= p_num1 AND p_num1 <= 25.
+    WRITE : 'Grilen sayı : ', p_num1, /'0 ile 25 arasındadır'.
+  ELSEIF 25 <= p_num1 AND p_num1 <= 50
+    WRITE : 'Grilen sayı : ', p_num1, /'25 ile 50 arasındadır'.
+  ELSEIF 50 <= p_num1 AND p_num1 <= 75
+    WRITE : 'Grilen sayı : ', p_num1, /'50 ile 75 arasındadır'.
+  ELSEIF 75 <= p_num1 AND p_num1 <= 100
+    WRITE : 'Grilen sayı : ', p_num1, /'75 ile 100 arasındadır'.
+  ELSEIF p_num1 > 100
+    WRITE : 'Grilen sayı : ', p_num1, /'100'den büyüktür.'.
+  ENDIF.
