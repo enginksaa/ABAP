@@ -1,0 +1,68 @@
+*ABAP Table mantığı şu şekildedir.
+*Table içerisindeki her bir satıra STRUCTURE diyebiliriz.
+*Her satırın içindeki bir hücre yani tablo yapısındaki kolonlar ise VARIABLE olarak isimlendirilir.
+*VARIABLE tek bir DATA tutar.
+*STRUCTURE birden fazla VARIABLE yani birden fazla DATA tutar.
+*TABLE ise birden fazla STRUCTURE tutar.
+
+** TABLE'da var olan bir VARIABLE'yi kullanmak :
+** TYPE yerine daha önce table yaratırken oluşturduğumuz DATA ELEMENTI yazabiliriz.
+** gv_persid içindeki v -> variable manasına gelir.
+** gs_pers_t içindeki s -> structure manasına gelir.
+** gt_pers_t içindeki t -> table manasına gelir.
+
+********* VARIABLE TANIMLAMASI *********
+
+DATA : gv_persid TYPE ZENG_PERSID_DE,
+       gv_persad TYPE ZENG_PERSAD_DE,
+       gv_perssoyad TYPE ZENG_PERSSOYAD_DE,
+       gv_perscins TYPE ZENG_PERSCINS_DE.
+
+********* STRUCTURE TANIMLAMASI *********
+      gs_pers_t TYPE ZENG_PERS_T.
+
+
+********* TABLE TANIMLAMASI *********
+
+  **gt_pers_t internal table olarak isimlendirilir.
+
+      gt_pers_t TYPE TABLE OF ZENG_PERS_T.
+
+********* TEMEL SQL SORGULARI *********
+*SELECT : Veritabanından data çekmek için kullanılır.
+*UPDATE
+*INSERT
+*DELETE
+*MODIFY
+
+******************************* SELECT KOMUTU *******************************
+
+********* TABLE ÇEKME ********* 
+
+  SELECT * FROM ZENG_PERS_T
+**Çektiğimiz dataları bir INTERNAL TABLE'a almak istersen INTO TABLE komutu kullanılır.
+    INTO TABLE gt_pers_t.
+
+********* TABLE'dan BELİRLİ ŞARTLARA UYGUN DATALARI ÇEKME *********
+  
+  SELECT * FROM ZENG_PERS_T
+    INTO TABLE gt_pers_t
+    WHERE pers_cins EQ E 
+
+**ZENG_PERS_T tablosundan personel cinsiyeti E olan satırları çektim.
+
+
+********* STRUCTURE ÇEKME *********
+
+  SELECT SINGLE * FROM ZENG_PERS_T
+**Çektiğimiz dataları bir INTERNAL TABLE'a almak istersen INTO TABLE komutu kullanılır
+    INTO gs_pers_t.
+
+********* STRUCTURE KOLONU ÇEKME *********
+
+  SELECT SINGLE PERS_ID FROM ZENG_PERS_T
+    INTO gv_persid
+
+******************************* UPTADE KOMUTU *******************************
+
+
