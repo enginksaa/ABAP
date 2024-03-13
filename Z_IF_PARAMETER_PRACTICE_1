@@ -29,7 +29,7 @@
 
   PARAMETERS : p_num1 TYPE i.
 
-SELECTION-SCREEN END OF BLOCK b11.
+ SELECTION-SCREEN END OF BLOCK b11.
 
   IF 0 <= p_num1 AND p_num1 <= 25.
     WRITE : 'Grilen sayı : ', p_num1, /'0 ile 25 arasındadır'.
