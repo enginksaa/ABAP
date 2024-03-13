@@ -2,9 +2,18 @@
 **Even number : 0
 **Odd number  : 1
 **Even number : 2
-**Odd number  : 3 
+**Odd number  : 3 until 100.
 
 
-DATA : gv_odd_number  TYPE i,
-       gv_even_number TYPE i.
 
+DATA : gv_number  TYPE i.
+
+   gv_number = 0.  
+WHILE gv_number < 100.
+       gv_number = gv_number + 1.
+       IF gv_number MOD = 0.
+             WRITE : /'Even number :', gv_number.
+       ELSE
+              WRITE : /'Odd number :', gv_number.
+       ENDIF.
+ENDWHILE.
