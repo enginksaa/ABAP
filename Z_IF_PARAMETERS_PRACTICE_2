@@ -1,0 +1,40 @@
+*Ekranda sayısal tipinde bir parametre olsun.
+*Parametre; Notunuz
+*Gitilen sayı D ile 100 arasında olsun. Farklı değer girerse mesaj ile uyarı versin.
+*Eğer aralıktaysa da;
+*Û-20 aralığındaysa 'Harf Notunuz FF'
+*20-40 aralığındaysa 'Harf Notunuz DD
+*40-50 aralığındaysa 'Harf Notunuz CC'
+*60-80 aralığındaysa 'Harf Notunuz BB'
+*80-1Dû aralığındaysa 'Harf Notunuz AA'
+*Şeklinde mesaj verecek programı yazın.
+*Ornek-l:
+*Notunuz —45
+*Ekranda yazdıracağı,
+*Harf Notunuz CC
+*Ornek-2:
+*Notunuz 78
+*Ekranda yazdıracağı,
+*Harf Notunuz BB
+
+
+DATA : p_note1 TYPE i.
+
+SELECT SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
+  PARAMETERS : p_note1.
+
+SELECT SCREEN END OF BLOCK b11.
+
+  WRITE : 'NOTUNUZ :', p_num1.
+
+  IF p_num1 => 0 AND p_num <= 20.
+    WRITE : 'HARF NOTUNUZ : 'FF' '. 
+  ELSEIF p_num1 => 20 AND p_num <= 40.
+    WRITE : 'HARF NOTUNUZ : 'DD' '.
+  ELSEIF p_num1 => 40 AND p_num <= 60.
+    WRITE : 'HARF NOTUNUZ : 'CC' '.
+  ELSEIF p_num1 => 60 AND p_num <= 80.
+    WRITE : 'HARF NOTUNUZ : 'BB' '.
+  ELSEIF p_num1 => 80 AND p_num <= 100.
+    WRITE : 'HARF NOTUNUZ : 'AA' '.
+  ENDIF.
