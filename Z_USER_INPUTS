@@ -46,11 +46,33 @@
                p_rad4 RADIOBUTTON GROUP grp2,
                p_rad5 RADIOBUTTON GROUP grp2.
 
+******************************* FRAME EKLENMESİ *******************************
+**GUI üzerinde daha güzel görünmesi adına parametrelere çerçeve eklenebilir. 
+**b11 isimlendirmesi bizim yaptıgımız bir tanımlamadır. Değiştirilebilir
 
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME. 
+  PARAMETERS : p_rad1 RADIOBUTTON GROUP grp1,
+               p_rad2 RADIOBUTTON GROUP grp1,
+               p_rad3 RADIOBUTTON GROUP grp1.
+SELECTION-SCREEN END OF BLOCK b11.
 
+**********FRAME TITLE EKLENMESİ **********
+**ÖNYÜZde oluşturulan çerçeveye bir başlık eklemek için kullanılır.
+** text-001 objesi bizim çerçevimizin adının ne olacagını tutar bunun için GİT>METİN SEMBOLÜ>TEXT SYMBOLS> ID=001 olarak tanımlanır.
+**text-001 bizim yaptıgımız bir tanımlamadır. Değiştirilebilir.
 
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
+  
+  PARAMETERS : p_rad1 RADIOBUTTON GROUP grp1,
+               p_rad2 RADIOBUTTON GROUP grp1,
+               p_rad3 RADIOBUTTON GROUP grp1.
+SELECTION-SCREEN END OF BLOCK b11.
 
-
+SELECTION-SCREEN BEGIN OF BLOCK b12 WITH FRAME TITLE text-001.
+  
+  PARAMETERS : p_rad4 RADIOBUTTON GROUP grp2,
+               p_rad5 RADIOBUTTON GROUP grp2.
+SELECTION-SCREEN END OF BLOCK b12.
 
 
 
