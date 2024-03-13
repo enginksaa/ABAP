@@ -1,0 +1,59 @@
+**PARAMETRELER
+**SELECT OPTION
+**CHECKBOX
+**RADIO BUTTON
+**SELECTION SCREEN burada bahsedilen konular olacaktır.
+
+
+******************************* PARAMETERS *******************************
+
+** Kullanıcıdan istediğimiz tipte tek bir veri almak için kullanılır.
+** p_num p-> paramters demektir.
+** int4 = 10 basamaklı değer 
+** Ön yüzde çalışırken p_num1 görünmemesi için Git>Metin sembolü > Selection text 
+** Bir tableda var olan bir DATA ELEMENTI burada PARAMETRE olarak tanımlayabiliriz.
+
+  DATA   : gv_perssoyad TYPE ZENG_PERSSOYAD_DE.
+  TABLES : ZENG_PERS_T.
+  PARAMETERS : p_num1 TYPE int4.
+               p_persad TYPE ZENG_PERSAD_DE.  
+
+
+******************************* SELECT OPTIONS *******************************
+
+** SELECT OPTIONS değişkeni yani s_persyd MAX 8 karakter olmalı.
+** SELECT OPTIONS tek , çoklu , data aralığı vb şekilde data almamızı sağlar
+** İstersek seçilecek datayı içerde kendimiz yaratabiliriz. Örn gv_perssoyad gibi. 
+** İstersek kod içerisine önce TABLE'ı tanımlayarak o tablonun belirli bir alanını da kullanabiliriz. örn. WERKS MATNR BWART gibi. 
+
+  Select OPTIONS : s_persyd FOR gv_perssoyad.
+                   s_perscn FOR ZENG_PERS_T~PERS_CINS.
+
+
+******************************* CHECKBOX *******************************
+
+  PARAMETERS p_cbox1 as CHECKBOX.
+
+******************************* RADIO BUTTON *******************************
+** Birden fazla seçenek sunar Kullanıcı birisini seçer.
+** Birden fazla RADIO BUTTON tipi var buradaki örnekte RADIOBUTTON GROUP kullanıldı.
+** grp1 içindeki p_rad1,p_rad2,ip_rad3 sadece 1 tanesi seçilebilir.
+** grp2 farklı bir radiogrup oldugu için onlar etkilenmez fakat rad4 ve rad5 aynı anda seçilemez.
+
+  PARAMETERS : p_rad1 RADIOBUTTON GROUP grp1,
+               p_rad2 RADIOBUTTON GROUP grp1,
+               p_rad3 RADIOBUTTON GROUP grp1,
+               p_rad4 RADIOBUTTON GROUP grp2,
+               p_rad5 RADIOBUTTON GROUP grp2.
+
+
+
+
+
+
+
+
+
+
+
+
