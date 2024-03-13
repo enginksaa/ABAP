@@ -28,13 +28,13 @@ SELECT SCREEN END OF BLOCK b11.
   WRITE : 'NOTUNUZ :', p_num1.
 
   IF p_num1 => 0 AND p_num <= 20.
-    WRITE : 'HARF NOTUNUZ : 'FF' '. 
+    WRITE : /'HARF NOTUNUZ : 'FF' '. 
   ELSEIF p_num1 => 20 AND p_num <= 40.
-    WRITE : 'HARF NOTUNUZ : 'DD' '.
+    WRITE : /'HARF NOTUNUZ : 'DD' '.
   ELSEIF p_num1 => 40 AND p_num <= 60.
-    WRITE : 'HARF NOTUNUZ : 'CC' '.
+    WRITE : /'HARF NOTUNUZ : 'CC' '.
   ELSEIF p_num1 => 60 AND p_num <= 80.
-    WRITE : 'HARF NOTUNUZ : 'BB' '.
+    WRITE : /'HARF NOTUNUZ : 'BB' '.
   ELSEIF p_num1 => 80 AND p_num <= 100.
-    WRITE : 'HARF NOTUNUZ : 'AA' '.
+    WRITE : /'HARF NOTUNUZ : 'AA' '.
   ENDIF.
