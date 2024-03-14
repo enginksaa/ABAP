@@ -24,10 +24,10 @@ DATA : gv_num1  TYPE i,
 
 SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
 
-  PARAMETERS : p_rtplm RADIOBUTTON GROUP rad1,
-               p_rckrt RADIOBUTTON GROUP rad1,
-               p_rcarp RADIOBUTTON GROUP rad1,
-               p_rbolm RADIOBUTTON GROUP rad1.
+  PARAMETERS : p_rsum RADIOBUTTON GROUP rad1,
+               p_rsub RADIOBUTTON GROUP rad1,
+               p_rmul RADIOBUTTON GROUP rad1,
+               p_rdiv RADIOBUTTON GROUP rad1.
 
 SELECTION-SCREEN END OF BLOCK b11.
 
@@ -46,23 +46,45 @@ IF p_num1 IS NOT INITIAL AND p_num2 IS NOT INITIAL.
   WRITE : 'Lütfen Değer giriniz ! '
 ENDIF.
 
-IF  p_rtplm = abap_true.
+**1. YOL**
+
+IF  p_rsum = abap_true.
        gv_result = gv_num1 + gv_num2.
        WRITE : '(', gv_num1, '+' , gv_num2, ')'.
                /' SONUC : ', gv_result.
-ELSEIF p_ckrm = abap_true.
+ELSEIF p_rsub = abap_true.
        gv_result = gv_num1 - gv_num2.
        WRITE : '(', gv_num1, '-', gv_num2, ')'.
                /' SONUC : ' , gv_result.
-ELSEIF p_crpm = abap_true.
+ELSEIF p_rmul = abap_true.
        gv_result = gv_num1 * gv_num2.
        WRITE : '(', gv_num1, '*', gv_num2, ')'.
                /' SONUC : ', gv_result.
-ELSEIF gv_result = gv_num1 / gv_num2.
+ELSEIF p_rdiv = abap_true.
+       gv_result = gv_num1 / gv_num2.
        WRITE : '(', gv_num1 ,'/', gv_num2,')'.
                /' SONUC : ' , gv_result.
 ENDIF
 
+**2.YOL**
 
+CASE abap_true.
+       WHEN p_rsum.
+       gv_result = gv_num1 + gv_num2.
+       WRITE : '(', gv_num1, '+' , gv_num2, ')'.
+               /' SONUC : ', gv_result.
+       WHEN p_rsub.
+       gv_result = gv_num1 - gv_num2.
+       WRITE : '(', gv_num1, '-' , gv_num2, ')'.
+               /' SONUC : ', gv_result.
+       WHEN p_rmul.
+       gv_result = gv_num1 * gv_num2.
+       WRITE : '(', gv_num1, '*' , gv_num2, ')'.
+               /' SONUC : ', gv_result.
+       WHEN p_Rdiv.
+       gv_result = gv_num1 / gv_num2.
+       WRITE : '(', gv_num1, '/' , gv_num2, ')'.
+               /' SONUC : ', gv_result.
+       ENDCASE.
 
 
