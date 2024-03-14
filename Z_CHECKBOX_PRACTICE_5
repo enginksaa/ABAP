@@ -36,35 +36,35 @@ SELECTION-SCREEN END OF BLOCK b11.
   gv_num3 = 5.
 
   **1-2-3 DOLU
-  IF p_cbox1 abap_true AND p_cbox2 abap_true AND p_cbox3 abap_true.
+  IF p_cbox1 = abap_true AND p_cbox2 = abap_true AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num1 + gv_num2 + gv_num3.
       WRITE : 'SONUC :', gv_result. 
   **2-3 DOLU
-  ELSEIF p_cbox1 abap_false AND p_cbox2 abap_true AND p_cbox3 abap_true.
+  ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_true AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num2 + gv_num3.
       WRITE : 'SONUC :', gv_result.
   **3 DOLU
-  ELSEIF p_cbox1 abap_true AND p_cbox2 abap_false AND p_cbox3 abap_true.
+  ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num3.
       WRITE : 'SONUC :', gv_result.
   **HEPSİ BOŞ
-  ELSEIF p_cbox1 abap_false AND p_cbox2 abap_false AND p_cbox3 abap_false.
+  ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_false AND p_cbox3 = abap_false.
       gv_result = gv_sbt1.
       WRITE : 'SONUC :', gv_result.
   **1-3 DOLU
-  ELSEIF p_cbox1 abap_true AND p_cbox2 abap_false AND p_cbox3 abap_true.
+  ELSEIF p_cbox1  = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num1 + gv_num3.
       WRITE : 'SONUC :', gv_result.
   **1-2 DOLU
-  ELSEIF p_cbox1 abap_true AND p_cbox2 abap_true AND p_cbox3 abap_false.
+  ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_true AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num1 + gv_num2.
       WRITE : 'SONUC :', gv_result.
   **1 DOLU
-  ELSEIF p_cbox1 abap_true AND p_cbox2 abap_false AND p_cbox3 abap_false.
+  ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num1.
       WRITE : 'SONUC :', gv_result.
   **2 DOLU
-  ELSEIF p_cbox1 abap_false AND p_cbox2 abap_true AND p_cbox3 abap_false.
+  ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_true AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num2.
       WRITE : 'SONUC :', gv_result.
   ENDIF.
