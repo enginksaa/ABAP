@@ -31,6 +31,7 @@
 
 
 ******************************* CHECKBOX *******************************
+**p_cbox= abap_true check box seçili demektir.
 
   PARAMETERS p_cbox1 as CHECKBOX.
 
@@ -49,6 +50,8 @@
 ******************************* FRAME EKLENMESİ *******************************
 **GUI üzerinde daha güzel görünmesi adına parametrelere çerçeve eklenebilir. 
 **b11 isimlendirmesi bizim yaptıgımız bir tanımlamadır. Değiştirilebilir
+
+**p_rad1 = abap_true radio button seçili demektir.
 
 SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME. 
   PARAMETERS : p_rad1 RADIOBUTTON GROUP grp1,
