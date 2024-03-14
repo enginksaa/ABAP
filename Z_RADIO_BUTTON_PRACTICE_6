@@ -18,16 +18,16 @@
 **Ekrana (23 - 4);
 **19
 
-DATA : gv_num1 TYPE i,
-       gv_num2 TYPE i.
-
+DATA : gv_num1  TYPE i,
+       gv_num2  TYPE i,
+       gv_resul TYPE i.
 
 SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
 
-  PARAMETERS : p_rtplm RADIOBUTTON GROUP grp1,
-               p_rckrt RADIOBUTTON GROUP grp1,
-               p_rcarp RADIOBUTTON GROUP grp1,
-               p_rbolm RADIOBUTTON GROUP grp1.
+  PARAMETERS : p_rtplm RADIOBUTTON GROUP rad1,
+               p_rckrt RADIOBUTTON GROUP rad1,
+               p_rcarp RADIOBUTTON GROUP rad1,
+               p_rbolm RADIOBUTTON GROUP rad1.
 
 SELECTION-SCREEN END OF BLOCK b11.
 
@@ -45,6 +45,23 @@ SELECTION_SCREEN END OF BLOCK b12.
 IF p_num1 IS NOT INITIAL AND p_num2 IS NOT INITIAL.
   WRITE : 'Lütfen Değer giriniz ! '
 ENDIF.
+
+IF  p_rtplm = abap_true.
+       gv_result = gv_num1 + gv_num2.
+       WRITE : '(', gv_num1, '+' , gv_num2, ')'.
+               /' SONUC : ', gv_result.
+ELSEIF p_ckrm = abap_true.
+       gv_result = gv_num1 - gv_num2.
+       WRITE : '(', gv_num1, '-', gv_num2, ')'.
+               /' SONUC : ' , gv_result.
+ELSEIF p_crpm = abap_true.
+       gv_result = gv_num1 * gv_num2.
+       WRITE : '(', gv_num1, '*', gv_num2, ')'.
+               /' SONUC : ', gv_result.
+ELSEIF gv_result = gv_num1 / gv_num2.
+       WRITE : '(', gv_num1 ,'/', gv_num2,')'.
+               /' SONUC : ' , gv_result.
+ENDIF
 
 
 
