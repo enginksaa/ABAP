@@ -1,1 +1,75 @@
+**Ekranda iki parametre ve 4 radiabuttan ve 2 adet checkbox alacak.
+**Radiobuttonlar;
+**TOPLAMA
+**ÇIKARMA
+**ÇARPMA
+**BÖLME
+**Checkbaxlar;
+**10 ile Çarp
+**2 ye Böl
+**Olacak. Ve iki girdiği sayıyı seçtiğim radiobuttona göre işleme yapacak sonrasında checkbox seçili olan var ise
+**checkbox a verilen işlemi yapacak ve ekrana yazdıracak.
+**Ve her radiobuttondaki aritmetik işlem bir form da yapılacak.
+**Ornek-l:
+**Parametre 1 : 10
+**Parametre 2 : 20
+**Seçilen radiobutton ÇARPMA
+**Seçilen checkbox 10 ile Çarp
+**Seçilen checkbox 2 ye Böl
+**Ekrana (10 * * 10/2;
+**1000
+**Örnek-2:
+**Parametre 1 : 23
+**Parametre 2 : 5
+**Seçilen radiobutton ÇIKARMA
+**Seçilen checkbox 2 ye Böl
+**Ekrana (23 - 5) / 2;
 
+
+
+DATA : gv_num1 TYPE i,
+       gv_num2 TYPE i.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH text-001.
+
+  PARAMETERS : p_num1 FOR gv_num1,
+               p_num2 FOR gv_num2.
+
+SELECTION-SCREEN END OF BLOCK b11.
+
+SELECTION-SCREEN BEGIN OF BLOCK b12 FRAME WITH text-002.
+
+  PARAMETERS : p_rsum RADIOBUTTON GROUP rad1,
+               p_rsub RADIOBUTTON GROUP rad1,
+               p_rmul RADIOBUTTON GROUP rad1,
+               p_rdiv RADIOBUTTON GROUP rad1,
+               p_cbox1 AS CHECKBOX,
+               p_cbox2 AS CHECKBOX.
+
+SELECTION-SCREEN END OF BLOCK b12.
+
+      gv_num1 = p_num1,
+      gv_num2 = p_num2.
+
+   IF p_rsum = abap_true AND  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+  
