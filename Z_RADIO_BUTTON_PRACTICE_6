@@ -42,6 +42,9 @@ SELECTION_SCREEN END OF BLOCK b12.
   gv_num1 = p_num1,
   gv_num2 = p_num2.
 
+
+START-OF-SELECTION. 
+
 IF p_num1 IS NOT INITIAL AND p_num2 IS NOT INITIAL.
   WRITE : 'Lütfen Değer giriniz ! '
 ENDIF.
