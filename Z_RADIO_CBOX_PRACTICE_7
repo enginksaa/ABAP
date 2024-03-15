@@ -52,8 +52,13 @@ SELECTION-SCREEN END OF BLOCK b12.
       gv_num1 = p_num1,
       gv_num2 = p_num2.
 
-   IF p_rsum = abap_true AND  
+START-OF-SELECTION.
 
+       IF
+
+
+
+     
 
 
 
