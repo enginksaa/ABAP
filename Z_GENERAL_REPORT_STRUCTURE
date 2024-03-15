@@ -1,0 +1,25 @@
+**START-OF-SELECTION bloğu kullanmanız gerekmektedir. START-OF-SELECTION bloğu, raporun başlangıcında yürütülen bir ABAP bloğudur ve genellikle raporun işlevselliğinin ana kısmını içerir.
+
+REPORT <report_name>.
+
+* Değişken tanımlamaları
+DATA: <variable1> TYPE <data_type>,
+      <variable2> TYPE <data_type>,
+      ...
+
+* Seçim ekranı tanımlamaları
+SELECTION-SCREEN BEGIN OF BLOCK <block_name> WITH FRAME TITLE <title>.
+  PARAMETERS: <parameter1> TYPE <data_type> DEFAULT <default_value>,
+              <parameter2> TYPE <data_type> DEFAULT <default_value>,
+              ...
+SELECTION-SCREEN END OF BLOCK <block_name>.
+
+* START-OF-SELECTION bloğu
+START-OF-SELECTION.
+  * Kullanıcı girişlerinin kontrolü
+  IF <condition>.
+    * Hata mesajı gösterme
+  ELSE.
+    * İşlemler ve iş mantığı
+    ...
+  ENDIF.
