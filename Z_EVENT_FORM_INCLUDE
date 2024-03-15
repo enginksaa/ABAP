@@ -1,0 +1,106 @@
+**EVENT blocks programın akışını kontrol ettiğimiz yapılardır.
+
+
+********************** EVENT BLOCKS ********************** 
+
+***4 EVENT BLOGUMUZ VAR
+*INITIALIZATION        : Ekrana girilen User-inputlardan önce çalışacak kısımların yazıldığı yerdir.Default WERKS=TR01 gelmesi gibi.
+  
+  p_sayac = 1.
+
+*At SELECTION-SCREEN   : Input parametrelerini özelleştiriğimiz yer.Her tetiklendiğinde 
+  
+  p_sayac = p_sayac +1. **Her entere bastıgımda p_num 1 artar.
+ 
+
+
+*START-OF-SELECTION    : Programda çalışması isteğimiz kısımlar
+  WRITE : ' HELLO  START WORLD'.
+
+
+*END-OF-SELECTION      : Formların kullanıldıgı kısım.
+  WRITE : ' HELLO END WORLD '
+
+
+********************** FORMS **********************
+**Yazılan kodun tekrar tekrar kullanılmasını sağlar OOP mantıgındadır.
+
+
+DATA : gv_num TYPE int4.
+
+INITIALIZATION.
+
+AT SELECTION-SCREEN.
+
+START-OF-SELECTION.
+    PERFORM sayiya_bir_ekle.
+    WRITE : gv_num.
+
+**USING'i kullanarak FORM'a değer gönderdik.
+    PERFORM iki_sayinin_carpimi USING 10
+                                      5.
+    
+END-OF-SELECTION.
+
+**FORM içerisine yazılan kod başka yerlerde form adıyla çağırılır. PERFORM komutu ile çalışması sağlanır.
+  
+  FORM sayiya_bir_ekle.
+
+    gv_num1 = gv_num + 1.
+  
+  
+  ENDFORM.
+**Bir FORM içine PARAMETRE göndermek istersek USING kullanılır.
+
+  FORM iki_sayinin_carpimi. USING p_num1
+                                  p_num2.
+**Lv içerisindeki L> local manasına gelir sadece bu FORM içerisinde kullanıldığını temsil eder.
+      DATA lv_sonuc TYPE int4.
+      lv_sonuc = p_num1 + p_num2.
+      WRITE : ' SONUC :' , lv_sonuc.
+    gv_num1 = gv_num + 1.
+  
+  ENDFORM.
+
+
+********************** INCLUDE **********************
+**Programda kullanılan kodları daha modüler hale getirmek için kullanılır.
+**SE38 > type = Include program seç.
+** Bu tipte yaratılan programlar diğer programlarda çalışabilir demek.
+
+*Değişkenlerimizi tuttugumuz bir INCLUDE olsun Z_report_t005_top
+
+**KULLANIMI
+  INCLUDE  z_report_t005_top. 
+
+
+**FORMLAR içinde oluşturabiliriz. Böylece Programımız sade ve okunabilir olur.
+
+  INCLUDE z_rep_t005_form. *(Bu include içine yukardaki form kodlarını yazacağız ve istediğimiz yerde çağırıp kullanacagız.)
+
+********************** ÖRNEK PROGRAM **********************
+
+INCLUDE z_report_t005_top. **Değişkenler ve parametreler burda.
+INCLUDE z_report_t005_form. **Formlar burda
+
+START-OF-SELECTION. 
+
+  PERFORM sayiya_bir_ekle.
+  PERFORM iki_sayinini_carpimi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
