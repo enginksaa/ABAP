@@ -27,11 +27,13 @@
 
 
 
-DATA : gv_num1 TYPE i,
-       gv_num2 TYPE i.
-
+DATA : gv_num1   TYPE i,
+       gv_num2   TYPE i,
+       gv_result TYPE i.
 
 SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH text-001.
+
+** FOR burada p_num1'i gv_num1 tipinde yaratmak için kullanılır. 
 
   PARAMETERS : p_num1 FOR gv_num1,
                p_num2 FOR gv_num2.
@@ -54,10 +56,46 @@ SELECTION-SCREEN END OF BLOCK b12.
 
 START-OF-SELECTION.
 
-       IF
+       CASE abap_true.
+              WHEN p_rsum.
+                     PERFORM sum_numbs.
+              WHEN p_rsub.
+                     PERFORM sub_numbs.
+              WHEN p_rmul.
+                     PERFORM mul_numbs.
+              WHEN p_rdiv.
+                     PERFORM div_numbs.
+       ENDCASE.
 
+       IF p_cbox1 IS INITIAL.
+              gv_result * 10.
+       ELSEIF p_cbox IS INITIAL.
+              gv_result / 2.
+       ENDIF.
 
+       WRITE : 'SONUC : ', gv_result.
 
+END-OF-SELECTION.
+
+FORM sum_numbs.
+       gv_result = gv_num1 + gv_num 2.
+       
+ENDFORM.
+
+FORM sub_numbs.
+       gv_result = gv_num1 - gv_num 2.
+       
+ENDFORM.
+
+FORM mul_numbs.
+       gv_result = gv_num1 * gv_num 2.
+       
+ENDFORM.
+
+FORM div_numbs.
+       gv_result = gv_num1 / gv_num 2.
+       
+ENDFORM.
      
 
 
