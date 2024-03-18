@@ -1,1 +1,30 @@
+**ODEV_11
 
+SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
+
+  PARAMETERS : p_num1 TYPE i,
+               p_num2 TYPE İ.
+
+SELECTIN-SCREEN END OF BLOCK b11.
+
+START-OF-SELECTION.
+
+PERFORM iki_sayinin_orani.
+
+END-OF-SELECTION.
+
+FORM iki_sayinin_orani p_num1,
+                       p_num2.
+  
+  DATA : lv_result TYPE p DECIMALS 2.
+      IF (p_num1 = 0) OR (p_num2 = 0)
+          WRITE : ' Sayılar 0 olamaz ! '.  
+      ENDIF.
+
+      IF p_num1 > p_num2.
+           lv_result = p_num1 / p_num2.
+      ELSE. 
+            lv_result = p_num2 / p_num1.
+      ENDIF.
+              WRITE : /'Sonuc : ' , lv_sonuc.
+ENDFORM.
