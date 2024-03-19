@@ -1,0 +1,64 @@
+**ÖDEV 12
+
+START-OF-SELECTION.
+
+PERFORM Engin.
+PERFORM ABAP.
+PERFORM Yazılım.
+PERFORM Biraz.
+PERFORM Zorlanıyor.
+PERFORM Ama.
+PERFORM Yazılım.
+PERFORM Dillerinden.
+PERFORM ABAP.
+PERFORM İçin.
+PERFORM Hiç.
+PERFORM Zor.
+PERFORM Degil.
+
+
+END-OF-SELECTION.
+
+FORM Engin.
+  Write : ' Engin '.
+ENDFORM.
+
+FORM ABAP.
+  Write : ' ABAP '.
+ENDFORM.
+
+FORM Yazılım.
+  Write : ' Yazılım '.
+ENDFORM.
+
+FORM Biraz.
+  Write : ' Biraz '.
+ENDFORM.
+
+FORM Zorlanıyor.
+  Write : ' Zorlanıyor '.
+ENDFORM.
+
+FORM Ama.
+  Write : ' Ama '.
+ENDFORM.
+
+FORM Dillerinden.
+  Write : ' Dillerinden '.
+ENDFORM.
+
+FORM İçin.
+  Write : ' İçin '.
+ENDFORM.
+
+FORM Hiç.
+  Write : ' Hiç '.
+ENDFORM.
+
+FORM Zor.
+  Write : ' Zor '.
+ENDFORM.
+
+FORM Değil.
+  Write : ' Değil '.
+ENDFORM.
