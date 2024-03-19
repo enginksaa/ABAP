@@ -1,0 +1,46 @@
+**ODEV 13
+
+DATA gv_num1 TYPE i,
+     gv_result TYPEİ.
+
+gv_num1 = 10.
+
+START-OF-SELECTION.
+
+PERFORM add7.
+PERFORM mul3.
+PERFORM add7.
+PERFORM sub4.
+PERFORM div2.
+PERFORM add7.
+PERFORM add7.
+
+WRITE : 'SONUC : ' ,gv_result.
+
+
+END-OF-SELECTION.
+
+
+FORM add7.
+     
+    gv_result = gv_num1 + 7. 
+    
+ENDFORM.
+
+FORM sub4.
+     
+    gv_result = gv_num1 - 4.  
+    
+ENDFORM.
+
+FORM div2.
+     
+    gv_result = gv_num1 / 2.  
+    
+ENDFORM.
+
+FORM mul3.
+     
+    gv_result = gv_num1 * 3.  
+    
+ENDFORM.
