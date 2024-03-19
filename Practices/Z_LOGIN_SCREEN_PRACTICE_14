@@ -2,5 +2,27 @@
 
 SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
 
+**SYUNAME burada SAP sistemindeki kullanıcı-adı alanıdır.
 
-PARAMETERS p_id TYPE 
+PARAMETERS : p_usr TYPE char10.
+             p_psswrd TYPE char10.
+
+
+** Program çalışmadan parametreleri özelleştiriyoruz Şifre = *** görünsün gibi.
+
+AT SELECTION-SCREEN OUTPUT.
+
+** burada şifrenin ** olarak görünmesini sağlıyoruz.
+LOOP AT SCREEN.
+  IF screen_name EQ 'P_PSSWRD'.
+
+     screen-invisible = 1.  
+  ENDIF.
+ENDLOOP.
+
+START-OF-SELECTION.
+   IF p_usr EQ 'SAPUSER' AND p_psswrd EQ '12345678'.
+      WRITE : ' Başarılı şekilde giriş yapıldı.'
+   ELSE.
+      WRITE : 'Kullanıcı adı veya şifre geçersiz/yanlış.'
+   ENDIF.
