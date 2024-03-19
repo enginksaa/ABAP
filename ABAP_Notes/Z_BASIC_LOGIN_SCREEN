@@ -1,0 +1,56 @@
+************************* SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001: *************************
+*Bu satır, bir ekran bloğu başlatır. Bu blok, bir başlık (text-001) ile birlikte çerçeve içine alınır.
+
+************************* PARAMETERS ************************* 
+*Bu satırlar, kullanıcıdan giriş yapmasını istediğiniz bilgileri belirtir. 
+*p_usr ve p_psswrd parametreleri kullanıcı adı ve şifre için oluşturulmuştur.
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
+
+PARAMETERS : p_usr TYPE char10.
+             p_psswrd TYPE char10.
+SELECTION SCREEN END OF BLOCK b11.
+
+
+
+************************* AT SELECTION-SCREEN OUTPUT ************************* 
+*Bu bölüm, seçim ekranı oluşturulduktan sonra çalışır. Burada, şifrenin yıldız (*) olarak görünmesini sağlayan kod bulunur. 
+*LOOP AT SCREEN döngüsü ekran alanlarını tarar ve şifre alanı (P_PSSWRD) bulunursa, screen-invisible değeri 1 olarak ayarlanır, 
+*böylece kullanıcı tarafından görünmez hale gelir.
+
+AT SELECTION-SCREEN OUTPUT.
+
+** burada şifrenin ** olarak görünmesini sağlıyoruz.
+LOOP AT SCREEN.
+  IF screen_name EQ 'P_PSSWRD'.
+
+     screen-invisible = 1.  
+  ENDIF.
+ENDLOOP.
+
+************************* START-OF-SELECTION ************************* 
+*Bu bölüm, kullanıcı parametreleri girdikten sonra programın gerçek çalışmasını başlatır. 
+*Kullanıcı adı ve şifre doğruysa (p_usr EQ 'SAPUSER' AND p_psswrd EQ '12345678'), "Başarılı şekilde giriş yapıldı." mesajını yazdırır. 
+*Aksi takdirde, "Kullanıcı adı veya şifre geçersiz/yanlış." mesajını yazdırır.
+
+START-OF-SELECTION.
+   IF p_usr EQ 'SAPUSER' AND p_psswrd EQ '12345678'.
+      WRITE : ' Başarılı şekilde giriş yapıldı.'
+   ELSE.
+      WRITE : 'Kullanıcı adı veya şifre geçersiz/yanlış.'
+   ENDIF.
+
+*Bu kod, kullanıcı adı ve şifre girişini kabul eder ve doğruluğunu kontrol eder. 
+*Şifre girişinin yıldız (*) olarak görünmesini sağlamak için AT SELECTION-SCREEN OUTPUT bölümünde LOOP AT SCREEN döngüsü kullanılmıştır. 
+*Bu döngü, ekrandaki alanları kontrol eder ve şifre alanı bulunduğunda, screen-invisible özelliği kullanılarak şifrenin görünürlüğü devre dışı bırakılır.
+*Bu, kullanıcının şifresini gizli bir şekilde girmesini sağlar.
+
+
+
+
+
+
+
+
+
+
