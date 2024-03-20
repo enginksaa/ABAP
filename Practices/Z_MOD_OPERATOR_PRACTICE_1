@@ -11,10 +11,10 @@ DATA : gv_number  TYPE i.
 
    gv_number = 0.  
 WHILE gv_number < 100.
-       gv_number = gv_number + 1.
-       IF gv_number MOD = 0.
+       IF gv_number MOD 2 EQ 0 .
              WRITE : /'Even number :', gv_number.
        ELSE
               WRITE : /'Odd number :', gv_number.
        ENDIF.
+   gv_number = gv_number + 1.
 ENDWHILE.
