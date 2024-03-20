@@ -14,62 +14,59 @@
 **17
 
 
-
 DATA : gv_sbt1   TYPE i,
        gv_num1   TYPE i,
        gv_num2   TYPE i,
        gv_num3   TYPE i,
        gv_result TYPE i.
 
-SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
-  
-  PARAMETERS : p_cbox1 as CHECKBOX,
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
+
+PARAMETERS :   p_cbox1 as CHECKBOX,
                p_cbox2 as CHECKBOX,
                p_cbox3 as CHECKBOX.
 
-SELECTION-SCREEN END OF BLOCK b11.
 
+SELECTION-SCREEN END OF BLOCK b11.
 
   gv_sbt1 = 10.
   gv_num1 = 2.
   gv_num2 = 3.
   gv_num3 = 5.
 
-  **1-2-3 DOLU
+START-OF-SELECTION.
+
+
+  "1-2-3 DOLU
   IF p_cbox1 = abap_true AND p_cbox2 = abap_true AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num1 + gv_num2 + gv_num3.
-      WRITE : 'SONUC :', gv_result. 
-  **2-3 DOLU
+      WRITE : 'SONUC :', gv_result.
+  "2-3 DOLU
   ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_true AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num2 + gv_num3.
       WRITE : 'SONUC :', gv_result.
-  **3 DOLU
+  "3 DOLU
   ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num3.
       WRITE : 'SONUC :', gv_result.
-  **HEPSİ BOŞ
+  "HEPSİ BOŞ
   ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_false AND p_cbox3 = abap_false.
       gv_result = gv_sbt1.
       WRITE : 'SONUC :', gv_result.
-  **1-3 DOLU
+  "1-3 DOLU
   ELSEIF p_cbox1  = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_true.
       gv_result = gv_sbt1 + gv_num1 + gv_num3.
       WRITE : 'SONUC :', gv_result.
-  **1-2 DOLU
+  ""1-2 DOLU
   ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_true AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num1 + gv_num2.
       WRITE : 'SONUC :', gv_result.
-  **1 DOLU
+  ""1 DOLU
   ELSEIF p_cbox1 = abap_true AND p_cbox2 = abap_false AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num1.
       WRITE : 'SONUC :', gv_result.
-  **2 DOLU
+  ""2 DOLU
   ELSEIF p_cbox1 = abap_false AND p_cbox2 = abap_true AND p_cbox3 = abap_false.
       gv_result = gv_sbt1 + gv_num2.
       WRITE : 'SONUC :', gv_result.
   ENDIF.
-
-
-
-
-

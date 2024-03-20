@@ -20,9 +20,9 @@
 
 DATA : gv_num1  TYPE i,
        gv_num2  TYPE i,
-       gv_resul TYPE i.
+       gv_result TYPE i.
 
-SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
 
   PARAMETERS : p_rsum RADIOBUTTON GROUP rad1,
                p_rsub RADIOBUTTON GROUP rad1,
@@ -31,63 +31,61 @@ SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
 
 SELECTION-SCREEN END OF BLOCK b11.
 
-SELECTION-SCREEN BEGIN OF BLOCK b12 FRAME WITH TITLE text-002
-  
+SELECTION-SCREEN BEGIN OF BLOCK b12 WITH FRAME TITLE text-002.
+
   PARAMETERS : p_num1 TYPE i,
                p_num2 TYPE i.
 
-SELECTION_SCREEN END OF BLOCK b12.
+SELECTION-SCREEN END OF BLOCK b12.
 
 
-  gv_num1 = p_num1,
+  gv_num1 = p_num1.
   gv_num2 = p_num2.
 
 
-START-OF-SELECTION. 
+START-OF-SELECTION.
 
-IF p_num1 IS NOT INITIAL AND p_num2 IS NOT INITIAL.
-  WRITE : 'Lütfen Değer giriniz ! '
-ENDIF.
 
 **1. YOL**
 
-IF  p_rsum = abap_true.
+IF p_rsum = abap_true.
        gv_result = gv_num1 + gv_num2.
        WRITE : '(', gv_num1, '+' , gv_num2, ')'.
-               /' SONUC : ', gv_result.
+       WRITE : 'SONUC : ', gv_result.
 ELSEIF p_rsub = abap_true.
        gv_result = gv_num1 - gv_num2.
        WRITE : '(', gv_num1, '-', gv_num2, ')'.
-               /' SONUC : ' , gv_result.
+        WRITE :' SONUC : ' , gv_result.
 ELSEIF p_rmul = abap_true.
        gv_result = gv_num1 * gv_num2.
        WRITE : '(', gv_num1, '*', gv_num2, ')'.
-               /' SONUC : ', gv_result.
+        WRITE :' SONUC : ', gv_result.
 ELSEIF p_rdiv = abap_true.
        gv_result = gv_num1 / gv_num2.
        WRITE : '(', gv_num1 ,'/', gv_num2,')'.
-               /' SONUC : ' , gv_result.
-ENDIF
+        WRITE :' SONUC : ' , gv_result.
+ENDIF.
+
 
 **2.YOL**
 
 CASE abap_true.
        WHEN p_rsum.
-       gv_result = gv_num1 + gv_num2.
-       WRITE : '(', gv_num1, '+' , gv_num2, ')'.
-               /' SONUC : ', gv_result.
+        gv_result = gv_num1 + gv_num2.
+                WRITE : '(', gv_num1, '+' , gv_num2, ')'.
+                WRITE :' SONUC : ', gv_result.
        WHEN p_rsub.
-       gv_result = gv_num1 - gv_num2.
-       WRITE : '(', gv_num1, '-' , gv_num2, ')'.
-               /' SONUC : ', gv_result.
+        gv_result = gv_num1 - gv_num2.
+                 WRITE : '(', gv_num1, '-' , gv_num2, ')'.
+                WRITE : 'SONUC : ', gv_result.
        WHEN p_rmul.
-       gv_result = gv_num1 * gv_num2.
-       WRITE : '(', gv_num1, '*' , gv_num2, ')'.
-               /' SONUC : ', gv_result.
-       WHEN p_Rdiv.
-       gv_result = gv_num1 / gv_num2.
-       WRITE : '(', gv_num1, '/' , gv_num2, ')'.
-               /' SONUC : ', gv_result.
+        gv_result = gv_num1 * gv_num2.
+                WRITE : '(', gv_num1, '*' , gv_num2, ')'.
+                WRITE : ' SONUC : ', gv_result.
+       WHEN p_rdiv.
+        gv_result = gv_num1 / gv_num2.
+                WRITE : '(', gv_num1, '/' , gv_num2, ')'.
+                WRITE :' SONUC : ', gv_result.
        ENDCASE.
 
 

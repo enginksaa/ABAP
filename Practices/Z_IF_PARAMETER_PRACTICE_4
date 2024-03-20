@@ -31,6 +31,8 @@
 
  SELECTION-SCREEN END OF BLOCK b11.
 
+  START-OF-SELECTION.
+  
   IF 0 <= p_num1 AND p_num1 <= 25.
     WRITE : 'Grilen sayı : ', p_num1, /'0 ile 25 arasındadır'.
   ELSEIF 25 <= p_num1 AND p_num1 <= 50

@@ -1,10 +1,9 @@
 **ODEV 14
 
-SELECTION-SCREEN BEGIN OF BLOCK b11 FRAME WITH TITLE text-001.
 
-**SYUNAME burada SAP sistemindeki kullanıcı-adı alanıdır.
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
 
-PARAMETERS : p_usr TYPE char10.
+PARAMETERS : p_usr TYPE char10,
              p_psswrd TYPE char10.
 
 SELECTION-SCREEN END OF BLOCK b11.
@@ -15,15 +14,15 @@ AT SELECTION-SCREEN OUTPUT.
 
 ** burada şifrenin ** olarak görünmesini sağlıyoruz.
 LOOP AT SCREEN.
-  IF screen_name EQ 'P_PSSWRD'.
-
-     screen-invisible = 1.  
+  IF screen-name = 'p_psswrd'.
+     screen-invisible = 1.
+     MODIFY SCREEN.
   ENDIF.
 ENDLOOP.
 
 START-OF-SELECTION.
    IF p_usr EQ 'SAPUSER' AND p_psswrd EQ '12345678'.
-      WRITE : ' Başarılı şekilde giriş yapıldı.'
+      WRITE : ' Başarılı şekilde giriş yapıldı.'.
    ELSE.
-      WRITE : 'Kullanıcı adı veya şifre geçersiz/yanlış.'
+      WRITE : 'Kullanıcı adı veya şifre geçersiz/yanlış.'.
    ENDIF.

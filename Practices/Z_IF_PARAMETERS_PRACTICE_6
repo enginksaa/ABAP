@@ -23,19 +23,21 @@
 SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE text-001.
   PARAMETERS : p_num1 TYPE i,
                p_num2 TYPE i,
-               p_num3 TYPE i,
+               p_num3 TYPE i.
 SELECTION-SCREEN END OF BLOCK b11.
 
-    IF p_num1 IS INITIAL 
+START-OF-SELECTION.
+
+    IF p_num1 IS INITIAL
        AND p_num2 IS INITIAL
        AND p_num3 IS INITIAL.
     WRITE : /'LÜTFEN SAYI GİRİNİZ'.
     ENDIF.
 
-    IF  (p_num2 < p_num1 AND p_num1 < p_num3) OR (p_num2 > p_num1 AND p_num1 > p_num3).
+    IF  ( p_num1 < p_num2 AND p_num1 < p_num3 ) OR ( p_num1 > p_num2 AND p_num1 < p_num3 ).
         WRITE : ' Birinci sayı diğer iki sayının arasındadır.'.
-    ELSEIF (p_num1 < p_num2 AND p_num2 < p_num3) OR (p_num1 > p_num2 AND p_num2 > p_num3).
+    ELSEIF ( p_num2 < p_num1 AND p_num2 > p_num3 ) OR ( p_num1 < p_num2 AND p_num2 < p_num3 ).
         WRITE : ' İkinci sayı diğer iki sayının arasındadır.'.
-    ELSEIF (p_num1 < p_num3 AND p_num3 < p_num2) OR (p_num1 > p_num3 AND p_num3 > p_num2 ).
+    ELSEIF ( p_num1 > p_num3 AND p_num3 > p_num2 ) OR ( p_num1 < p_num3 AND p_num3 < p_num2 ).
         WRITE : ' Üçüncü sayı diğer iki sayının arasındadır.'.
     ENDIF.

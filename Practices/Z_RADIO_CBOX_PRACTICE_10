@@ -1,29 +1,4 @@
-**Ekranda iki parametre ve 4 radiabuttan ve 2 adet checkbox alacak.
-**Radiobuttonlar;
-**TOPLAMA
-**ÇIKARMA
-**ÇARPMA
-**BÖLME
-**Checkbaxlar;
-**10 ile Çarp
-**2 ye Böl
-**Olacak. Ve iki girdiği sayıyı seçtiğim radiobuttona göre işleme yapacak sonrasında checkbox seçili olan var ise
-**checkbox a verilen işlemi yapacak ve ekrana yazdıracak.
-**Ve her radiobuttondaki aritmetik işlem bir form da yapılacak.
-**Ornek-l:
-**Parametre 1 : 10
-**Parametre 2 : 20
-**Seçilen radiobutton ÇARPMA
-**Seçilen checkbox 10 ile Çarp
-**Seçilen checkbox 2 ye Böl
-**Ekrana (10 * * 10/2;
-**1000
-**Örnek-2:
-**Parametre 1 : 23
-**Parametre 2 : 5
-**Seçilen radiobutton ÇIKARMA
-**Seçilen checkbox 2 ye Böl
-**Ekrana (23 - 5) / 2;
+**ODEV 10
 
 
 

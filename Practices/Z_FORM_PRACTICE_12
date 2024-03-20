@@ -1,5 +1,7 @@
 **ÖDEV 12
 
+**ÖDEV 12
+
 START-OF-SELECTION.
 
 PERFORM Engin.
@@ -11,8 +13,8 @@ PERFORM Ama.
 PERFORM Yazılım.
 PERFORM Dillerinden.
 PERFORM ABAP.
-PERFORM İçin.
-PERFORM Hiç.
+PERFORM icin.
+PERFORM Hic.
 PERFORM Zor.
 PERFORM Degil.
 
@@ -47,11 +49,11 @@ FORM Dillerinden.
   Write : ' Dillerinden '.
 ENDFORM.
 
-FORM İçin.
+FORM icin.
   Write : ' İçin '.
 ENDFORM.
 
-FORM Hiç.
+FORM Hic.
   Write : ' Hiç '.
 ENDFORM.
 
@@ -59,6 +61,6 @@ FORM Zor.
   Write : ' Zor '.
 ENDFORM.
 
-FORM Değil.
+FORM Degil.
   Write : ' Değil '.
 ENDFORM.

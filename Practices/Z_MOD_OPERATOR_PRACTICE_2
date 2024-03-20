@@ -6,12 +6,40 @@
 
 DATA gv_number TYPE i.
 
-WHILE gv_number < 100.
-      gv_number = gv_number + 1.
-  IF gv_number MOD 2 = 0.
-     WRITE : /' 2'e Tam bölünenler ', gv_number.
-  ELSEIF gv_number MOD 3 = 0.
-     WRITE : /' 3'e Tam bölünenler ', gv_number.
-  ELSEIF gv_number MOD 5 = 0.
-     WRITE : /' 5'e Tam bölünenler ', gv_number.
-  ENDIF.
+   gv_number = 0.
+
+
+WRITE / '2 ye tam bölünen sayılar : '.
+
+DO 101 TIMES.
+      gv_number = gv_number + 1. 
+      IF gv_number MOD 2 EQ 0.
+         WRITE : gv_number.
+      ENDIF.
+ENDDO.
+
+
+   gv_number = 0.
+
+
+WRITE / '3 ye tam bölünen sayılar : '.
+
+DO 101 TIMES.
+      gv_number = gv_number + 1. 
+      IF gv_number MOD 3 EQ 0.
+         WRITE : gv_number.
+      ENDIF.
+ENDDO.
+
+
+   gv_number = 0.
+
+
+WRITE / '5 ye tam bölünen sayılar : '.
+
+DO 101 TIMES.
+      gv_number = gv_number + 1. 
+      IF gv_number MOD 5 EQ 0.
+         WRITE : gv_number.
+      ENDIF.
+ENDDO.
