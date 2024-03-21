@@ -1,0 +1,37 @@
+*************************** FONKSİYON GRUBU ***************************
+
+**Belirli bir amaca hizmet eden fonksiyonları bir fonksiyon grubu altında toplanmasıdır.
+**SE80 işlem kodundan yapılır.
+
+
+*************************** FONKSİYON MODULÜ ***************************
+
+** Belirli bir amaca hizmet eden bir yapıyı bir fonksiyon altında toplanmasıdır
+** Her Fonksiyon modülü bir FONKSİYON GRUBUNA dahil olmak zorundadır.
+**SE37 işlem kodundan yapılır.
+
+IMPORT 
+Fonksiyona verilecek değerler
+Optional (Bu parametreyi fonksiyona gönderilmesinin zorunlu olup olmamasını sağlar)
+Pass by Value 
+
+EXPORT 
+Fonksiyondan alınacak çıktı değerler
+
+CHANGING
+Input olarak aldıgı ve değiştirecegi yapıları tutar.
+
+TABLES
+
+
+EXCEPTIONS
+Alınabilecek hataları tanımladıgımız yer.
+
+*********************** ÖRNEK ***********************
+
+IMPORT 
+Parameter       :iv_num1
+Typing          :TYPE
+Associated type :int4
+Default value   :10
+
