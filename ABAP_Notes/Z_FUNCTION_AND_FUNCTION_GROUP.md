@@ -1,15 +1,15 @@
 *********** FUNCTION AND FUNCTION GROUP *********** 
-// Her fonksiyon bir FM grubuna ait olmalıdır.
-// SE80 Tcode üzerinden oluşturulur.
-// SE37 TCODE function oluşturmak için kullanılır.
+//Her fonksiyon bir FM grubuna ait olmalıdır.
+//SE80 Tcode üzerinden oluşturulur.
+//SE37 TCODE function oluşturmak için kullanılır.
 
-// IMPORT dışarıdan bu FM girecek parametrelerin tanımlandığı yerdir.
-// EXPORT bu FM'den bize dönecek değerlerin tanımlandığı yerdir.
-// CHANGING FM ınput alcak bize içerisinde değiştirip vereceği yapılar.
-// TABLES birden fazla datanın TABLE biçiminde bize dönmesini sağlar
-// FM için yazılacak ayrıcalıkların oldugu kısımdır.
+//IMPORT dışarıdan bu FM girecek parametrelerin tanımlandığı yerdir.
+//EXPORT bu FM'den bize dönecek değerlerin tanımlandığı yerdir.
+//CHANGING FM ınput alcak bize içerisinde değiştirip vereceği yapılar.
+//TABLES birden fazla datanın TABLE biçiminde bize dönmesini sağlar
+//FM için yazılacak ayrıcalıkların oldugu kısımdır.
 
-// AKILLI KOD yapısı import = iv , export = ev,
+//AKILLI KOD yapısı import = iv , export = ev,
 //import için iv_num1 , iv_num2 int 4 tipinde 2 sayı oluşturalım. 
 //export için ev_result değişkeni oluşturalım.
 
