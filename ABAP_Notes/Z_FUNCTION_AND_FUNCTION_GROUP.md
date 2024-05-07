@@ -28,5 +28,9 @@ ev_result = iv_num1 / iv_num2.
   cv_mess = 'Değiştirilmiş mesaj'.
 
 ![SE37](https://github.com/enginksaa/ABAP/blob/main/ABAP_Notes/FM_FMGRP/FM_ATTRIBUTES.png)
+![SE37](https://github.com/enginksaa/ABAP/blob/main/ABAP_Notes/FM_FMGRP/FM_IMPORT.png)
+![SE37](https://github.com/enginksaa/ABAP/blob/main/ABAP_Notes/FM_FMGRP/FM_EXPORT.png)
+![SE37](https://github.com/enginksaa/ABAP/blob/main/ABAP_Notes/FM_FMGRP/FM_CHANGING.png)
+![SE37](https://github.com/enginksaa/ABAP/blob/main/ABAP_Notes/FM_FMGRP/FM_SOURCECODE.png)
 
 
