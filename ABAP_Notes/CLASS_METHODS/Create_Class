@@ -1,6 +1,86 @@
 ************************* CLASS CREATE *************************
+
 *SE24 Tcode kullanılarak oluşturulur.
 *Instantiability of a Class seçeneği ile OOP incapsulation mantığı vardır. Bu class ne kadar özel yada genel bir kullanıma sahip olacağını belirtir. Public seçilebilir.Daha sonra değiştirilebilir.
 *Sınıfın ait olacağı package seçilir.
 
-METHOD 
+************************* METHODS ************************* 
+
+Class içerisinde oluşturulabilen çeşitli kodları içerisinde bulunduran Function Module grubudur.
+Class içerisine yaratılan methodların parametre TYPE'ları 
+
+IMPORTING : Methoda dışarıdan veri gönderilir (girdi parametresi). Methodun içinde bu veri kullanılır, ancak method bu parametrede değişiklik yapmaz.
+            Parametre sadece method içinde okunabilir.
+            Varsayılan olarak CALL BY VALUE kullanır (yani değerin bir kopyası methoda taşınır).
+
+METHOD calculate_square.
+  r_square = i_number * i_number.
+ENDMETHOD.
+
+(Çağırma)
+DATA: square TYPE i.
+square = obj->calculate_square( i_number = 4 ).
+
+
+
+
+
+EXPORTING : Methodun çalışması sonucunda ürettiği veriyi dış dünyaya (çağırana) gönderir (çıktı parametresi).
+            Sadece methodun dışına veri taşımak için kullanılır.
+            Method dışında kullanılabilir.
+            Varsayılan olarak CALL BY VALUE kullanır.
+
+METHOD generate_message.
+  e_message = 'Hello, ' && i_name && '!'.
+ENDMETHOD.
+
+(Çağırma)
+DATA: message TYPE string.
+obj->generate_message( EXPORTING i_name = 'Engin' IMPORTING e_message = message ).
+WRITE: / message.
+
+
+
+CHANGING  : Parametre hem methoda veri taşır (girdi) hem de methodun çalışması sırasında değişip geri döner (girdi-çıktı parametresi).
+            Hem giriş hem de çıkış amacıyla aynı parametreyi kullanmak gerektiğinde tercih edilir.
+            Varsayılan olarak CALL BY REFERENCE kullanır (yani, method doğrudan bellekteki orijinal veriyi değiştirir).
+
+METHOD increment_number.
+  c_number = c_number + 1.
+ENDMETHOD.
+
+(Çağırma)
+DATA: number TYPE i VALUE 5.
+obj->increment_number( CHANGING c_number = number ).
+WRITE: / number. " Çıktı: 6
+
+
+RETURNING : Method yalnızca bir değer döndürür (fonksiyon gibi çalışır).
+            Methodun yalnızca tek bir değer üretmesi gerektiğinde kullanılır.
+            EXPORTING yerine kullanılır, ancak sadece bir değer döndürebilir. Geri döndürülen değer doğrudan bir değişkene atanır.
+            Sadece tek bir RETURNING parametresi olabilir ve bu parametre, methodun sonunda RETURN ifadesi ile döndürülür.
+
+METHOD calculate_area.
+  r_area = length * width.
+ENDMETHOD.
+
+(Çağırma)
+DATA: area TYPE i.
+area = obj->calculate_area( length = 5 width = 10 ).
+WRITE: / area. " Çıktı: 50
+
+
+********** Instance Method **********
+
+Instance method bir program içinde kullanılabilmesi için bu instance methodu referans alan bir obje oluşturulup kullanılabilmesi gerekmektedir.
+
+DATA: obj TYPE REF TO class_name.
+CREATE OBJECT obj.
+obj->method_name( ).
+
+
+********** Static Method **********
+
+class_name=>method_name( ).
+
+
