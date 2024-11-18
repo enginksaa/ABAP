@@ -9,6 +9,8 @@
 Class içerisinde oluşturulabilen çeşitli kodları içerisinde bulunduran Function Module grubudur.
 Class içerisine yaratılan methodların parametre TYPE'ları 
 
+
+
 IMPORTING : Methoda dışarıdan veri gönderilir (girdi parametresi). Methodun içinde bu veri kullanılır, ancak method bu parametrede değişiklik yapmaz.
             Parametre sadece method içinde okunabilir.
             Varsayılan olarak CALL BY VALUE kullanır (yani değerin bir kopyası methoda taşınır).
@@ -20,9 +22,6 @@ ENDMETHOD.
 (Çağırma)
 DATA: square TYPE i.
 square = obj->calculate_square( i_number = 4 ).
-
-
-
 
 
 EXPORTING : Methodun çalışması sonucunda ürettiği veriyi dış dünyaya (çağırana) gönderir (çıktı parametresi).
@@ -108,6 +107,9 @@ Method içerisindeki tüm değişkenlerim için int4 kullanmak yerine number_typ
 ********** ATTIRIBUTES **********
 Method içerisinde kullanılmak üzere önceden tanımlanabilen VALUE'lar. 
 Burada TYPES içerisinde yaratılan TYPE kullanılabilir.
+
+
+********** FRIENDS **********
 
 
 
