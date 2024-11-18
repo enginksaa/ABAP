@@ -1,0 +1,36 @@
+*&---------------------------------------------------------------------*
+*& Report Z_ENG_SUB_NUMBER
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT Z_ENG_SUB_NUMBER.
+
+DATA : gv_num1 TYPE int4,
+       gv_num2 TYPE int4,
+       gv_result TYPE int4.
+
+
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE TEXT-001.
+
+  PARAMETERS : p_num1 LIKE gv_num1,
+               p_num2 LIKE gv_num2.
+
+
+SELECTION-SCREEN END OF BLOCK b11.
+
+            gv_num1 = p_num1.
+            gv_num2 = p_num2.
+
+
+zcl_eng_class=>sub_numbers(
+  EXPORTING
+    iv_num1   = gv_num1                  " 4 Byte Signed Integer
+    iv_num2   = gv_num2                 " 4 Byte Signed Integer
+  IMPORTING
+    gv_result = gv_result                 " 4 Byte Signed Integer
+).
+
+
+ WRITE : gv_result.
