@@ -24,7 +24,7 @@ SELECTION-SCREEN END OF BLOCK b11.
             gv_num2 = p_num2.
 
 
-zcl_eng_class=>sub_numbers(
+zcl_eng_class=>sub_numbers(               "Static Method oldugu için obj tanımlaması yapılmadı.
   EXPORTING
     iv_num1   = gv_num1                  " 4 Byte Signed Integer
     iv_num2   = gv_num2                 " 4 Byte Signed Integer
