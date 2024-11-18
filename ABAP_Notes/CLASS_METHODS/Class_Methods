@@ -97,3 +97,21 @@ Obje oluşturmaya gerek duymadan class ismi yazılarak method direkt olarak ça�
 go_zcl_eng_class->sum_numbers_v2( ).
 
 
+
+********** TYPES **********
+METHOD içerisinde ortak kullanılan bir data type yaratmak için kullanılır.
+Örnegin numaralar için ortak bir type oluşturalım.
+
+number_typ adında bir TYPE oluşturalım ve türü INT4 olsun.
+Method içerisindeki tüm değişkenlerim için int4 kullanmak yerine number_typ yazabilirim.
+
+********** ATTIRIBUTES **********
+Method içerisinde kullanılmak üzere önceden tanımlanabilen VALUE'lar. 
+Burada TYPES içerisinde yaratılan TYPE kullanılabilir.
+
+
+
+
+
+
+
