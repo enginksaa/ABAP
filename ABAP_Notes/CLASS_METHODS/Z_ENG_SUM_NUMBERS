@@ -1,0 +1,49 @@
+*&---------------------------------------------------------------------*
+*& Report Z_ENG_SUM_NUMBERS
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_eng_sum_numbers.
+
+DATA : go_zcl_eng_class TYPE REF TO zcl_eng_class.  " (INSTANCE METHOD için geçerli)Classı kullanabilmek için Classı referans eden bir object oluşturduk.
+DATA : gv_num1   TYPE int4, " TYPE method parametreleri ile aynı olmalı.
+       gv_num2   TYPE int4,
+       gv_result TYPE int4.
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE TEXT-001.
+
+  PARAMETERS : p_num1 LIKE gv_num1,
+               p_num2 LIKE gv_num2.
+
+
+SELECTION-SCREEN END OF BLOCK b11.
+
+START-OF-SELECTION.
+
+
+
+   gv_num1 = p_num1.
+   gv_num2 = p_num2.
+
+  "INSTANCE METHOD KULLANIMI
+  CREATE OBJECT go_zcl_eng_class. "Objeyi kullanıma hazır hale getirdik.
+
+  "ctrl + space ile class içindeki kullanılabilir public methodlar gelir.
+  go_zcl_eng_class->sum_numbers(
+    EXPORTING
+      iv_num1   =   gv_num1               " 4 Byte Signed Integer
+      iv_num2   =   gv_num2               " 4 Byte Signed Integer
+    IMPORTING
+      ev_result =   gv_result               " 4 Byte Signed Integer
+  ).
+
+
+  WRITE : gv_result.
+
+
+
+  "STATIC METHOD KULLANIMI
+
+  "Obje oluşturmaya gerek duymadan class ismi yazılarak method direkt olarak çağırılabilir.
+
+*    zcl_eng_class=>sum_numbers_v2( ).
