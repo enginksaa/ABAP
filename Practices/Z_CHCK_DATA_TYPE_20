@@ -1,0 +1,43 @@
+*&---------------------------------------------------------------------*
+*& Report Z_CHCK_DATA_TYPE
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_chck_data_type.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE TEXT-001.
+
+
+
+  PARAMETERS : p_data TYPE char20.
+
+
+SELECTION-SCREEN END OF BLOCK b11.
+
+
+
+DATA : lv_data  LIKE p_data,
+       gv_dtype LIKE dd01v-datatype.
+
+
+lv_data = p_data.
+
+    IF lv_data IS INITIAL.
+          WRITE : ' Enter value'.
+    ELSE.
+
+        CALL FUNCTION 'NUMERIC_CHECK'
+          EXPORTING
+            string_in = lv_data
+          IMPORTING
+*           STRING_OUT       =
+            htype     = gv_dtype.
+
+      IF gv_dtype EQ 'NUMC'.
+        WRITE : 'Your value is Numeric'.
+      ELSEIF gv_dtype EQ 'CHAR'.
+        WRITE : 'Your value is non-Numeric'.
+      ENDIF.
+
+ENDIF.
