@@ -1,0 +1,6 @@
+************************* CLASS CREATE *************************
+*SE24 Tcode kullanılarak oluşturulur.
+*Instantiability of a Class seçeneği ile OOP incapsulation mantığı vardır. Bu class ne kadar özel yada genel bir kullanıma sahip olacağını belirtir. Public seçilebilir.Daha sonra değiştirilebilir.
+*Sınıfın ait olacağı package seçilir.
+
+METHOD 
